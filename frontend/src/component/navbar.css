@@ -28,12 +28,50 @@
   -webkit-text-fill-color: transparent;
   font-size: 300%;
 }
+.nav-link {
+  color: #ccc;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link.active {
+  color: white;
+  /* bright yellow highlight */
+  font-weight: bold;
+  text-shadow: 0 0 8px hsl(59, 82%, 70%);
+}
 
 .btn1{
   background-color: #237610;
   border: none;
   border-radius:12px ;
-  margin-left: 50px;
+  transition: all 0.3s ease;
+    cursor: pointer;
+  padding: 10px;
+}
+.btn1:hover{
+  background-color: #3dda1a;
+  transform: translateY(-2px);
+}
+.btn1:active,
+.btn1.active {
+  background-color: #ff4b2b;
+  /* deeper tone */
+  transform: scale(0.97);
+  box-shadow: 0 0 8px rgba(255, 75, 43, 0.4);
+
+}
+
+/* Optional: keep button color if it's the current page */
+.nav-link.active .btn1 {
+  background-color:#3dda1a;
+  box-shadow: 0 0 8px rgba(255, 75, 43, 0.5);
+  color: white;;
 }
 
 /* Responsive styles */

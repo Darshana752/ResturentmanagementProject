@@ -1,0 +1,210 @@
+/* 🌐 Section Styling */
+.mm1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 350%;
+
+  background: linear-gradient(135deg, rgb(192, 147, 63), rgb(90, 138, 5));
+  color: aqua;
+
+  min-height: 10vh;
+  padding: 100px 20px;
+
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ✨ Subtle background animation effect */
+.mm1::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
+  animation: bg-move 8s linear infinite;
+}
+
+@keyframes bg-move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 📝 Text Styling */
+.mm1 h1,
+.mm1 p {
+  z-index: 1;
+  margin: 0;
+  padding: 10px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎯 Responsive font sizes */
+@media (max-width: 1024px) {
+  .mm1 {
+    font-size: 250%;
+    padding: 80px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mm1 {
+    font-size: 180%;
+    padding: 60px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mm1 {
+    font-size: 140%;
+    padding: 40px 10px;
+  }
+}
+
+/* 🎨 Professional Button Design */
+.btn2 {
+  background: linear-gradient(90deg, rgb(197, 246, 18), rgb(192, 147, 63));
+  color: #222;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+  position: relative;
+}
+
+/* 💫 Hover Effect */
+.btn2:hover {
+  background: linear-gradient(90deg, rgb(90, 138, 5), rgb(255, 255, 100));
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 255, 100, 0.6);
+  transform: scale(1.05);
+}
+
+/* 🖼️ Image container — centers and adds animation entrance */
+/* 🖼️ Image container — centers and adds animation entrance */
+.food-image-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* ✨ Image styling — clean, modern, glowing effect */
+.food-image {
+  width: 200%;
+  /* ⬆️ Increased image size by 200% */
+  max-width: none;
+  /* remove restriction */
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.4s ease;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🌈 Subtle border glow effect */
+.food-image::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 24px;
+  background: linear-gradient(45deg, #ffcc00, #ff9900, #ffffff, #ffcc00);
+  background-size: 300%;
+  z-index: -1;
+  animation: borderGlow 8s linear infinite;
+  opacity: 0.3;
+}
+
+/* 💫 Hover effect — zoom + clarity + glow */
+.food-image:hover {
+  transform: scale(1.1);
+  /* subtle zoom */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  filter: brightness(1.1);
+}
+
+/* 🔁 Border gradient animation */
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🌟 Fade-in entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive behavior */
+@media (max-width: 1024px) {
+  .food-image {
+    width: 120%;
+    /* slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .food-image {
+    width: 100%;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-image {
+    width: 95%;
+    border-radius: 15px;
+  }
+}

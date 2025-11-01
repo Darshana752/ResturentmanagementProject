@@ -98,10 +98,10 @@ export default function Signup() {
         }}
       >
         <form onSubmit={handleSubmit} className="signup-form">
-          <h2>Sign Up for our system</h2>
+          <h2>Sign Up for our system.</h2>
 
           <div className="form-group">
-            <label style={{color:"white"}}>Role:</label>
+            <label style={{color:"white"}}>Choose Role: </label>
             <select name="role" value={formData.role} onChange={handleChange}>
               <option value="CUSTOMER">Customer</option>
               <option value="ADMIN">Admin</option>

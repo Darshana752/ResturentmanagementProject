@@ -12,9 +12,9 @@ export default function Home() {
       <p>Flavor Meets Excellence!
       </p>
       <p>
-        <button className='btn2' ><Link to="/fooditem" style={{ textDecoration: "none", color: "inherit" }}>
-    View FoodItem
-  </Link></button></p>
+        <Link to="/fooditem" style={{ textDecoration: "none", color: "inherit" }}><button className='btn2' >
+    View FoodItem</button>
+  </Link></p>
 
      <div className="food-image-container">
           <img 

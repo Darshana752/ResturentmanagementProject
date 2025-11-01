@@ -1,12 +1,17 @@
-import React from 'react';
-import { Container, Nav } from 'react-bootstrap';
-import { Navbar as BootstrapNavbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import './navbar.css';
+import React from "react";
+import { Container, Nav } from "react-bootstrap";
+import { Navbar as BootstrapNavbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import "./navbar.css";
 
 export default function Navbar() {
   return (
-    <BootstrapNavbar expand="lg" bg="dark" data-bs-theme="dark" className="custom-navbar">
+    <BootstrapNavbar
+      expand="lg"
+      bg="dark"
+      data-bs-theme="dark"
+      className="custom-navbar"
+    >
       <Container>
         <BootstrapNavbar.Brand href="#home" className="brand-text gradient">
           MD Restaurant
@@ -14,7 +19,7 @@ export default function Navbar() {
         <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
         <BootstrapNavbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto nav-links">
-            <NavLink to="/home" className="nav-link">
+            <NavLink to="/" className="nav-link">
               Home
             </NavLink>
             <NavLink to="/fooditem" className="nav-link">
@@ -35,5 +40,3 @@ export default function Navbar() {
     </BootstrapNavbar>
   );
 }
-
-

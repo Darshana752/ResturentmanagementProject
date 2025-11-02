@@ -11,7 +11,7 @@
 }
 
 .nav-links .nav-link {
-  color: #ccc !important;
+  color: #f9f8f8 !important;
   margin: 0 10px;
   transition: color 0.3s ease;
   font-size: 120%;
@@ -29,7 +29,7 @@
   font-size: 300%;
 }
 .nav-link {
-  color: #ccc;
+  color: #fff;
   text-decoration: none;
   margin-left: 10px;
   transition: color 0.3s ease, font-weight 0.3s ease;
@@ -40,10 +40,10 @@
 }
 
 .nav-link.active {
-  color: white;
+  color: #fff;
   /* bright yellow highlight */
   font-weight: bold;
-  text-shadow: 0 0 8px hsl(59, 82%, 70%);
+  text-shadow: 0 0 10px hsl(60, 100%, 96%);
 }
 
 .btn1{
@@ -69,9 +69,38 @@
 
 /* Optional: keep button color if it's the current page */
 .nav-link.active .btn1 {
-  background-color:#3dda1a;
-  box-shadow: 0 0 8px rgba(255, 75, 43, 0.5);
-  color: white;;
+  background-color: #3dda1a;
+  /* bright green */
+  color: white;
+  box-shadow:
+    0 0 10px #3dda1a,
+    0 0 20px #3dda1a,
+    0 0 30px #3dda1a,
+    0 0 40px #3dda1a;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add a pulsing animation for extra shine */
+.nav-link.active .btn1:hover {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 10px #3dda1a,
+      0 0 20px #3dda1a,
+      0 0 30px #3dda1a,
+      0 0 40px #3dda1a;
+  }
+
+  to {
+    box-shadow:
+      0 0 20px #3dda1a,
+      0 0 30px #3dda1a,
+      0 0 40px #3dda1a,
+      0 0 60px #3dda1a;
+  }
 }
 
 /* Responsive styles */
@@ -90,4 +119,12 @@
   .custom-navbar .navbar-brand {
     font-size: 1.2rem;
   }
+}
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+ 
+  /* make sure it's on top of other content */
 }

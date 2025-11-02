@@ -10,7 +10,7 @@ export default function Navbar() {
       expand="lg"
       bg="dark"
       data-bs-theme="dark"
-      className="custom-navbar"
+      className="custom-navbar fixed-top"
     >
       <Container>
         <BootstrapNavbar.Brand href="#home" className="brand-text gradient">
@@ -31,7 +31,7 @@ export default function Navbar() {
             <NavLink to="/signup" className="nav-link">
               <button className="btn1">Sign up</button>
             </NavLink>
-            <NavLink to="/login" className="nav-link">
+            <NavLink to="/loginup" className="nav-link">
               <button className="btn1">Login up</button>
             </NavLink>
           </Nav>

@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Fooditem from "./pages/Fooditem";
 import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
+import Loginup from "./pages/Loginup";
+import Admindashboard from "./pages/Admindashboard";
+import Customerdashboard from "./pages/Customerdashboard";
 
 function App() {
   return (
@@ -13,9 +16,18 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/fooditem" element={<Fooditem />}></Route>
         <Route exact path="/contact" element={<Contact />}></Route>
-        <Route exact path="/signup" element={<Signup />}>
-          
-        </Route>
+        <Route exact path="/signup" element={<Signup />}></Route>
+        <Route exact path="/loginup" element={<Loginup />}></Route>
+        <Route
+          exact
+          path="/admindashboard"
+          element={<Admindashboard />}
+        ></Route>
+        <Route
+          exact
+          path="/customerdashboard"
+          element={<Customerdashboard />}
+        ></Route>
       </Routes>
     </Router>
   );

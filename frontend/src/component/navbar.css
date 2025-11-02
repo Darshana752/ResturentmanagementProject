@@ -37,6 +37,7 @@
 
 .nav-link:hover {
   color: #fff;
+  text-shadow: 0 0 10px hsl(60, 100%, 96%);
 }
 
 .nav-link.active {

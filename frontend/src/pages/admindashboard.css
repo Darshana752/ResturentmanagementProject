@@ -1,0 +1,172 @@
+/* --- Layout --- */
+.admin-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #101820, #1c1f26);
+  color: #fff;
+
+  /* space for fixed navbar */
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+   
+ 
+}
+
+/* --- Title --- */
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #3dda1a, #00e1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-glow 2s infinite alternate;
+}
+
+@keyframes title-glow {
+  from {
+    text-shadow: 0 0 10px #3dda1a, 0 0 20px #00e1ff;
+  }
+
+  to {
+    text-shadow: 0 0 25px #00e1ff, 0 0 40px #3dda1a;
+  }
+}
+
+/* --- Cards --- */
+.dashboard-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* --- Individual Card --- */
+.card-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  width: 280px;
+  height: 260px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(61, 218, 26, 0.2);
+}
+
+.card-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px #3dda1a, 0 0 45px #00e1ff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Icons --- */
+.icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #3dda1a;
+  transition: transform 0.3s ease;
+}
+
+.card-item:hover .icon {
+  transform: rotate(10deg) scale(1.2);
+  color: #00e1ff;
+}
+
+/* --- Text --- */
+.card-item h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card-item p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* admindashboard.css */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../assets/image4.jpg") no-repeat center center/cover;
+    background-size: 120%;
+      background-attachment: fixed;
+      
+        background-position:0% 25% ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding-top: 0px;
+  /* for navbar spacing */
+  transition: background 0.5s ease-in-out;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #f1f1f1;
+  text-shadow: 0 0 15px rgba(0, 255, 128, 0.8);
+}
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.card-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 255, 128, 0.8);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #00ff99;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.card-item:hover .icon {
+  transform: rotate(10deg) scale(1.1);
+  color: #00ffaa;
+}
+
+.card-item h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.card-item p {
+  color: #ddd;
+  font-size: 0.95rem;
+}

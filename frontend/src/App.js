@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import Loginup from "./pages/Loginup";
 import Admindashboard from "./pages/Admindashboard";
 import Customerdashboard from "./pages/Customerdashboard";
+import Addfoodproduct from "./foodservice/Addfoodproduct";
 
 function App() {
   return (
@@ -27,6 +28,11 @@ function App() {
           exact
           path="/customerdashboard"
           element={<Customerdashboard />}
+        ></Route>
+        <Route
+          exact
+          path="/addfoodproduct"
+          element={<Addfoodproduct />}
         ></Route>
       </Routes>
     </Router>

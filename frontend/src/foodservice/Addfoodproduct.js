@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../component/Navbar";
-import "./addproduct.css"; // custom CSS
+import "./addproduct.css";
+import foodimage1 from "../assets/image6.jpg"; // background image
 
 export default function AddProduct() {
   const [formData, setFormData] = useState({
@@ -30,12 +31,9 @@ export default function AddProduct() {
     e.preventDefault();
 
     const data = new FormData();
-    data.append("name", formData.name);
-    data.append("price", formData.price);
-    data.append("category", formData.category);
-    data.append("ingredient", formData.ingredient);
-    data.append("description", formData.description);
-    if (formData.image) data.append("image", formData.image);
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value) data.append(key, value);
+    });
 
     try {
       const response = await fetch("http://localhost:8090/api/foods/add", {
@@ -63,7 +61,12 @@ export default function AddProduct() {
   };
 
   return (
-    <div>
+    <div
+      className="add-product-page"
+      style={{
+        backgroundImage: `url(${foodimage1})`,
+      }}
+    >
       <Navbar />
 
       <div className="add-product-container">

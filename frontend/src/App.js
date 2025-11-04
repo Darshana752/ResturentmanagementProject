@@ -9,6 +9,7 @@ import Loginup from "./pages/Loginup";
 import Admindashboard from "./pages/Admindashboard";
 import Customerdashboard from "./pages/Customerdashboard";
 import Addfoodproduct from "./foodservice/Addfoodproduct";
+import Upadatefooditem from "./foodservice/Upadatefooditem";
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
           exact
           path="/addfoodproduct"
           element={<Addfoodproduct />}
+        ></Route>
+        <Route
+          exact
+          path="/updatefooditem"
+          element={<Upadatefooditem />}
         ></Route>
       </Routes>
     </Router>

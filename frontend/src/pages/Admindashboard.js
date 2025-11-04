@@ -19,7 +19,7 @@ export default function Admindashboard() {
 
           
 
-           <div className="card-item" onClick={() => (window.location.href = "/orders")}>
+           <div className="card-item" onClick={() => (window.location.href = "/updatefooditem")}>
             <FaBoxOpen className="icon" />
             <h2>Update Food Item</h2>
             <p>update existing ones in your restaurant menu.</p>

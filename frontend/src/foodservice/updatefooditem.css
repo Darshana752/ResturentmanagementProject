@@ -1,0 +1,246 @@
+/* ===== Page Layout ===== */
+.update-page {
+  position: relative;
+  background: url("../assets/image7.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 60px 40px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+/* Smooth dark overlay for better contrast */
+.update-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+  backdrop-filter: blur(2px);
+}
+
+/* Stack content above overlay */
+.update-page>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Title ===== */
+.update-title {
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  animation: fadeInDown 0.9s ease-in-out;
+}
+
+.update-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+  border-radius: 5px;
+  animation: glowLine 2s infinite alternate;
+}
+
+/* ===== Food Grid ===== */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  justify-content: center;
+  margin-top: 40px;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+@media (max-width: 992px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Food Card ===== */
+.food-card {
+  background: rgba(255, 255, 255, 0.93);
+  color: #1e293b;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  animation: fadeInUp 0.7s ease both;
+  position: relative;
+}
+
+.food-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 18px 35px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.97);
+}
+
+/* ===== Food Image ===== */
+.food-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.food-card:hover .food-image {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* ===== Info Section ===== */
+.food-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.food-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.food-category,
+.food-ingredient,
+.food-price {
+  margin: 6px 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* ===== Edit Button ===== */
+.edit-btn {
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.edit-btn:hover {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* ===== Update Form Section ===== */
+.update-form-container {
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 3px solid #3b82f6;
+  padding: 25px;
+  margin-top: 15px;
+  border-radius: 12px;
+  animation: slideDown 0.4s ease forwards;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.update-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.update-form-container input,
+.update-form-container textarea {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-form-container input:focus,
+.update-form-container textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.35);
+  outline: none;
+}
+
+.save-btn {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.save-btn:hover {
+  background: linear-gradient(90deg, #15803d, #16a34a);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.4);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowLine {
+  from {
+    box-shadow: 0 0 8px #38bdf8;
+  }
+
+  to {
+    box-shadow: 0 0 18px #2563eb;
+  }
+}

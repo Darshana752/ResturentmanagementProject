@@ -3,7 +3,10 @@ package com.example.backend.userservice;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/register")
@@ -36,34 +39,39 @@ public class UserController {
   @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
 
-    // Check admin
-    var adminOpt = adminRepository.findByEmailAndPassword(
+    // --- Check if admin ---
+    Optional<Admin> adminOpt = adminRepository.findByEmailAndPassword(
         loginRequest.getEmail(),
         loginRequest.getPassword());
 
     if (adminOpt.isPresent()) {
       Admin admin = adminOpt.get();
-      // Return JSON with role and name
-      return ResponseEntity.ok(Map.of(
-          "role", "ADMIN",
-          "name", admin.getName(),
-          "message", "Login successful"));
+      Map<String, Object> response = new HashMap<>();
+      response.put("userId", admin.getUserId());
+      response.put("name", admin.getName());
+      response.put("email", admin.getEmail());
+      response.put("role", "ADMIN");
+      response.put("message", "Login successful");
+      return ResponseEntity.ok(response);
     }
 
-    // Check customer
-    var customerOpt = customerRepository.findByEmailAndPassword(
+    // --- Check if customer ---
+    Optional<Customer> customerOpt = customerRepository.findByEmailAndPassword(
         loginRequest.getEmail(),
         loginRequest.getPassword());
 
     if (customerOpt.isPresent()) {
       Customer customer = customerOpt.get();
-      return ResponseEntity.ok(Map.of(
-          "role", "CUSTOMER",
-          "name", customer.getName(),
-          "message", "Login successful"));
+      Map<String, Object> response = new HashMap<>();
+      response.put("userId", customer.getUserId());
+      response.put("name", customer.getName());
+      response.put("email", customer.getEmail());
+      response.put("role", "CUSTOMER");
+      response.put("message", "Login successful");
+      return ResponseEntity.ok(response);
     }
 
-    // Invalid login
+    // --- Invalid login ---
     return ResponseEntity.status(401).body(Map.of(
         "message", "Invalid email or password"));
   }

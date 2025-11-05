@@ -1,0 +1,295 @@
+/* General Page Style */
+.dashboard-body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #c3dafe);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.dashboard-container {
+  text-align: center;
+  margin-top: 80px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Title & Subtitle */
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2a2a72;
+  margin-bottom: 10px;
+}
+
+.dashboard-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* Cards Layout */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Card Design */
+.dashboard-card {
+  background: white;
+  width: 300px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #7f9cf5, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.dashboard-card:hover::before {
+  opacity: 0.15;
+}
+
+/* Card Content */
+.card-icon {
+  font-size: 3rem;
+  color: #4f46e5;
+  margin-bottom: 15px;
+  animation: floatIcon 2.5s ease-in-out infinite;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2a2a72;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Card Button */
+.card-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card-btn:hover {
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIcon {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Background Setup */
+.dashboard-body {
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Overlay (to improve text readability over image) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.6));
+     
+  z-index: 0;
+}
+
+/* Container */
+.dashboard-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 100px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Title & Subtitle */
+.dashboard-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+ 
+}
+
+.dashboard-subtitle {
+  color: #e5e5e5;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Card Layout */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Card Styling */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 300px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Card Icon */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ffdf6c;
+  animation: floatIcon 2.5s ease-in-out infinite;
+}
+
+/* Card Content */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Card Button */
+.card-btn {
+  background: linear-gradient(135deg, #ffcc70, #ff8c00);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card-btn:hover {
+  background: linear-gradient(135deg, #ffb347, #ff7730);
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIcon {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .card-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-card {
+    width: 90%;
+  }
+}

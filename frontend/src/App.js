@@ -10,6 +10,7 @@ import Admindashboard from "./pages/Admindashboard";
 import Customerdashboard from "./pages/Customerdashboard";
 import Addfoodproduct from "./foodservice/Addfoodproduct";
 import Upadatefooditem from "./foodservice/Upadatefooditem";
+import Sendorder from "./orderservice/Sendorder";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           path="/updatefooditem"
           element={<Upadatefooditem />}
         ></Route>
+        <Route exact path="/sendorder" element={<Sendorder />}></Route>
       </Routes>
     </Router>
   );

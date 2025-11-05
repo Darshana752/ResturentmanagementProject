@@ -1,0 +1,280 @@
+/* -------------------------
+   Professional SendOrder CSS (Updated)
+   ------------------------- */
+
+/* Theme variables */
+:root {
+  --bg-image: url("../assets/image9.jpg");
+  --overlay: rgba(6, 18, 30, 0.55);
+  --card-bg: #ffffff;
+  --card-bg-hover: #fff9f2;
+  --accent-1: #ff7043;
+  --accent-2: #ffab66;
+  --muted: #333;
+  --price: #ff9800;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------
+   Page container & title
+   ------------------------- */
+.sendorder-body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(var(--overlay), var(--overlay)), var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 120px 30px;
+  color: var(--muted);
+  animation: pageFade 700ms cubic-bezier(.2, .9, .2, 1) both;
+  
+}
+
+.sendorder-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin: 6px 0 40px;
+  color: #fff;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.4px;
+  transform-origin: center;
+  animation: titleDrop 600ms ease-out both;
+}
+
+/* -------------------------
+   Grid - exactly 3 cards per row
+   ------------------------- */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* ✅ Fixed 3 per row */
+  gap: 30px;
+  align-items: start;
+  justify-items: center;
+  padding-bottom: 50px;
+}
+
+/* -------------------------
+   Card base
+   ------------------------- */
+.food-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  color: #222;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.35s ease;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 360px;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  background: var(--card-bg-hover);
+  box-shadow: 0 18px 38px rgba(255, 152, 0, 0.3);
+}
+
+/* Expanded */
+.food-card.expanded {
+  transform: scale(1.02);
+  background: #fff7ed;
+  box-shadow: 0 20px 45px rgba(255, 152, 0, 0.4);
+}
+
+/* -------------------------
+   Image container & image
+   ------------------------- */
+.food-img-container {
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.35s ease;
+}
+
+.food-card:hover .food-img-container .food-img {
+  transform: scale(1.07);
+  filter: brightness(1.08);
+}
+
+/* -------------------------
+   Card content
+   ------------------------- */
+.food-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 8px 0 5px;
+  color: #333;
+}
+
+.food-category {
+  color: var(--accent-1);
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.food-ingredients {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.food-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--price);
+  margin-bottom: 8px;
+}
+
+/* -------------------------
+   Buttons
+   ------------------------- */
+.order-btn,
+.submit-btn {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(255, 112, 67, 0.25);
+  transition: all 0.25s ease;
+}
+
+.order-btn:hover,
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(255, 112, 67, 0.4);
+}
+
+/* -------------------------
+   Order form
+   ------------------------- */
+.order-form {
+  margin-top: 16px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+  color: #222;
+  animation: formIn 0.3s ease;
+}
+
+.order-form h3 {
+  text-align: center;
+  color: var(--accent-1);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.order-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 6px rgba(255, 112, 67, 0.4);
+}
+
+.total-price {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-1);
+}
+
+/* -------------------------
+   Animations
+   ------------------------- */
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes titleDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes formIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* -------------------------
+   Responsive
+   ------------------------- */
+@media (max-width: 1024px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+    /* 1 per row on mobile */
+  }
+
+  .food-img-container {
+    height: 160px;
+  }
+}

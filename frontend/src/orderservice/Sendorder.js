@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import "./sendorder.css";
-import foodimage1 from "../assets/image9.jpg"; // ✅ Background image
+import foodimage1 from "../assets/image9.jpg";
 
 export default function SendOrder() {
   const [foods, setFoods] = useState([]);
@@ -41,19 +41,26 @@ export default function SendOrder() {
 
     const totalAmount = selectedFood.price * orderForm.quantity;
 
+    // ✅ FIXED: Send only userId in customer object
     const orderData = {
       deliveryAddress: orderForm.deliveryAddress,
       amount: totalAmount,
       status: "Pending",
+      customer: {
+        userId: parseInt(userId) // ✅ This is what backend expects
+      },
       orderItems: [
         {
-          food: { foodId: selectedFood.foodId },
+          food: {
+            foodId: selectedFood.foodId
+          },
           quantity: orderForm.quantity,
           priceAtPurchase: selectedFood.price,
         },
       ],
-      customer: { userId: parseInt(userId) },
     };
+
+    console.log("📤 Sending order data:", JSON.stringify(orderData, null, 2)); // ✅ Debug log
 
     try {
       const response = await fetch("http://localhost:8090/api/orders/place", {
@@ -63,16 +70,18 @@ export default function SendOrder() {
       });
 
       if (response.ok) {
-        alert("✅ Order placed successfully!");
+        const result = await response.json();
+        console.log("✅ Order placed successfully:", result);
+        alert(`✅ Order placed successfully! Order ID: ${result.orderId}`);
         setSelectedFood(null);
         setOrderForm({ quantity: 1, deliveryAddress: "" });
       } else {
         const errorText = await response.text();
-        console.error("Backend error:", errorText);
-        alert("❌ Failed to place order. Check console for details.");
+        console.error("❌ Backend error:", errorText);
+        alert(`❌ Failed to place order: ${errorText}`);
       }
     } catch (error) {
-      console.error("Error placing order:", error);
+      console.error("❌ Error placing order:", error);
       alert("❌ Could not connect to the server.");
     }
   };
@@ -143,6 +152,7 @@ export default function SendOrder() {
                   name="deliveryAddress"
                   value={orderForm.deliveryAddress}
                   onChange={handleChange}
+                  placeholder="Enter your delivery address"
                   required
                 ></textarea>
 

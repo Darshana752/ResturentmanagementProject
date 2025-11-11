@@ -1,6 +1,9 @@
 package com.example.backend.foodservice;
 
+import com.example.backend.orderservice.OrderItem;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "food")
@@ -11,10 +14,14 @@ public class Food {
 
   private String name;
   private Double price;
-  private String image; // file path of uploaded image
+  private String image;
   private String category;
   private String ingredient;
   private String description;
+
+  @OneToMany(mappedBy = "food")
+  @JsonBackReference // ✅ Prevents circular reference
+  private List<OrderItem> orderItems;
 
   // Getters and Setters
   public Long getFoodId() {
@@ -71,5 +78,13 @@ public class Food {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public List<OrderItem> getOrderItems() {
+    return orderItems;
+  }
+
+  public void setOrderItems(List<OrderItem> orderItems) {
+    this.orderItems = orderItems;
   }
 }

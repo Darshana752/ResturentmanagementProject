@@ -13,7 +13,6 @@
   animation: bgMove 20s ease-in-out infinite alternate;
 }
 
-/* ✨ Slight background motion effect */
 @keyframes bgMove {
   0% {
     background-position: 50% 50%;
@@ -28,7 +27,6 @@
   }
 }
 
-/* 🌙 Overlay for contrast */
 .overlay {
   position: absolute;
   inset: 0;
@@ -37,7 +35,6 @@
   z-index: 1;
 }
 
-/* 📝 Text Container */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -46,7 +43,6 @@
   animation: fadeInUp 1.5s ease-in-out;
 }
 
-/* ✨ Title */
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
@@ -55,7 +51,6 @@
   margin-bottom: 10px;
 }
 
-/* 🌈 Subtitle */
 .hero-content p {
   font-size: 1.8rem;
   color: #ffeb3b;
@@ -63,7 +58,6 @@
   margin-bottom: 40px;
 }
 
-/* 🪄 Fade In Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -76,7 +70,6 @@
   }
 }
 
-/* 🎨 Professional Button Design */
 .btn2 {
   background: linear-gradient(90deg, #ffeb3b, #f57c00);
   color: #222;
@@ -91,7 +84,6 @@
   animation: floatBtn 3s ease-in-out infinite;
 }
 
-/* 💫 Hover Effect */
 .btn2:hover {
   background: linear-gradient(90deg, #f57c00, #ffeb3b);
   color: #fff;
@@ -99,7 +91,6 @@
   transform: scale(1.08);
 }
 
-/* 🌊 Floating animation */
 @keyframes floatBtn {
 
   0%,
@@ -112,7 +103,69 @@
   }
 }
 
-/* 📱 Responsive Design */
+/* 🍽️ About Section */
+.about-section {
+  background: #fafafa;
+  padding: 80px 20px;
+  text-align: center;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: -50px;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f57c00;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 📊 Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box h3 {
+  color: #f57c00;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* 📱 Responsive */
 @media (max-width: 1024px) {
   .hero-content h1 {
     font-size: 3rem;
@@ -120,6 +173,10 @@
 
   .hero-content p {
     font-size: 1.4rem;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
   }
 }
 
@@ -130,6 +187,11 @@
 
   .hero-content p {
     font-size: 1.2rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 25px;
   }
 }
 
@@ -145,5 +207,9 @@
   .btn2 {
     font-size: 1rem;
     padding: 10px 25px;
+  }
+
+  .stat-box {
+    width: 100%;
   }
 }

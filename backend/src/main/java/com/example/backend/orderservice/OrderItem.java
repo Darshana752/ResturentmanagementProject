@@ -1,6 +1,7 @@
 package com.example.backend.orderservice;
 
 import com.example.backend.foodservice.Food;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.*;
 
@@ -14,6 +15,7 @@ public class OrderItem {
 
   @ManyToOne
   @JoinColumn(name = "order_id", nullable = false)
+  @JsonBackReference // ✅ Back reference - will NOT serialize order (breaks cycle)
   private Order order;
 
   @ManyToOne
@@ -63,5 +65,4 @@ public class OrderItem {
   public void setPriceAtPurchase(double priceAtPurchase) {
     this.priceAtPurchase = priceAtPurchase;
   }
-
 }

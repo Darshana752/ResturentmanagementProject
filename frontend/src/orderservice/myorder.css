@@ -1,0 +1,228 @@
+/* 🌆 Full Page Background */
+.admin-order-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Semi-transparent overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 12, 12, 0.65);
+  z-index: 0;
+}
+
+/* Title */
+.page-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Loading and No Orders */
+.loading,
+.no-orders {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f8f9fa;
+}
+
+/* Container for all order cards */
+.admin-order-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Individual Order Card */
+.admin-order-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+  transition: all 0.3s ease;
+}
+
+.admin-order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-header h3 {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* Status Badge */
+.order-status {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.order-status.ready {
+  background-color: #28a745;
+}
+
+.order-status.pending {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+/* Order Details */
+.order-details p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #f8f9fa;
+}
+
+.order-details strong {
+  color: #fff;
+}
+
+/* Items List */
+.order-items {
+  margin-top: 15px;
+}
+
+.order-items h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.order-items ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.order-items li {
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+/* Delivery Details Section */
+.delivery-details {
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.delivery-details h4 {
+  margin-bottom: 6px;
+  color: #00e676;
+}
+
+/* 🆕 Customer Details Section */
+.customer-details {
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.customer-details h4 {
+  color: #03a9f4;
+  margin-bottom: 6px;
+}
+
+.customer-details p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: #e3f2fd;
+}
+
+/* “My Order” Button */
+.ready-btn {
+  margin-top: 15px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.ready-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Delivery Form Styling */
+.delivery-form {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.delivery-form h4 {
+  color: #00e676;
+  margin-bottom: 5px;
+}
+
+.delivery-form input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+}
+
+.got-delivery-btn{
+  padding: 9px 12px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.got-delivery-btn:hover {
+  background: #218838;
+}

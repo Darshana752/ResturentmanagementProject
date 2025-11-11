@@ -11,6 +11,8 @@ import Customerdashboard from "./pages/Customerdashboard";
 import Addfoodproduct from "./foodservice/Addfoodproduct";
 import Upadatefooditem from "./foodservice/Upadatefooditem";
 import Sendorder from "./orderservice/Sendorder";
+import Getorder from "./orderservice/Getorder";
+import Myorder from "./orderservice/Myorder";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
           element={<Upadatefooditem />}
         ></Route>
         <Route exact path="/sendorder" element={<Sendorder />}></Route>
+        <Route exact path="/getorder" element={<Getorder />}></Route>
+        <Route exact path="/myorders" element={<Myorder />}></Route>
       </Routes>
     </Router>
   );

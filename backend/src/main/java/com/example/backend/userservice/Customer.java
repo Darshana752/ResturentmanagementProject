@@ -1,15 +1,19 @@
 package com.example.backend.userservice;
 
+import java.util.List;
+
+import com.example.backend.orderservice.Order;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import jakarta.persistence.Table;
-import java.sql.Date; // for date of birth
 
 @Data
 @Entity
@@ -17,7 +21,6 @@ import java.sql.Date; // for date of birth
 @NoArgsConstructor
 @Getter
 @Setter
-
 @Table(name = "customer")
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Customer extends User {
@@ -26,5 +29,9 @@ public class Customer extends User {
   private String street;
   private String city;
 
-  // getters and setters
+  @OneToMany(mappedBy = "customer")
+  @JsonBackReference // ✅ Back reference - will NOT serialize orders (breaks cycle)
+  private List<Order> orders;
+
+  // getters and setters for homeNo, street, city are handled by Lombok
 }

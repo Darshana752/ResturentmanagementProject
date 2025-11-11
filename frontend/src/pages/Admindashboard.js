@@ -25,7 +25,7 @@ export default function Admindashboard() {
             <p>update existing ones in your restaurant menu.</p>
           </div>
 
-          <div className="card-item" onClick={() => (window.location.href = "/orders")}>
+          <div className="card-item" onClick={() => (window.location.href = "/getorder")}>
             <FaClipboardList className="icon" />
             <h2>Get Orders</h2>
             <p>View and manage all customer orders in real time.</p>

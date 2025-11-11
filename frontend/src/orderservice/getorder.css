@@ -1,0 +1,264 @@
+/* Page Background & Overlay */
+.admin-order-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-top: 100px;
+  overflow-x: hidden;
+  /* Removed animation from background */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Page Title */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  z-index: 2;
+  position: relative;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: fadeInTitle 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container & Grid */
+.admin-order-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Order Card */
+.admin-order-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInCard 0.8s ease forwards;
+}
+
+.admin-order-card:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.admin-order-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.admin-order-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.admin-order-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-order-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Order Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-status {
+  padding: 6px 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.order-status.ready {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.order-status.pending {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Order Details */
+.order-details p {
+  margin: 6px 0;
+  animation: fadeInDetail 0.5s ease forwards;
+}
+
+@keyframes fadeInDetail {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Order Items */
+.order-items ul {
+  margin: 5px 0 0 15px;
+  padding: 0;
+  list-style: disc;
+  animation: fadeInDetail 0.5s ease forwards;
+}
+
+.order-items h4 {
+  margin-bottom: 5px;
+}
+
+/* Button */
+.ready-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #007bff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ready-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Loading & No Orders */
+.loading,
+.no-orders {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-order-container {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-order-page {
+    padding: 20px 10px;
+  }
+
+  .ready-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+.delivered-card {
+  opacity: 0.8;
+  order: 2;
+}
+
+.ready {
+  background-color: #28a745;
+}
+
+.delivered {
+  background-color: #007bff;
+}

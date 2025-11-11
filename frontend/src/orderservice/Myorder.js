@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import "./myorder.css";
 import bgImage from "../assets/image11.jpg";
+import Bottom from "../component/Bottom";
 
 export default function Myorder() {
   const [orders, setOrders] = useState([]);
@@ -285,6 +286,7 @@ export default function Myorder() {
           </div>
         )}
       </div>
+      <div style={{marginTop:"-50px"}}> <Bottom/></div>
     </>
   );
 }

@@ -4,6 +4,7 @@ import "./admindashboard.css";
 import { FaBoxOpen, FaClipboardList } from "react-icons/fa";
 import foodimage1 from "../assets/image4.jpg";
 import { Link } from "react-router-dom";
+import Bottom from "../component/Bottom";
 export default function Admindashboard() {
   return (
     <>
@@ -32,6 +33,7 @@ export default function Admindashboard() {
           </div>
         </div>
       </div>
+      <div style={{marginTop:"-50px"}}> <Bottom/></div>
     </>
   );
 }

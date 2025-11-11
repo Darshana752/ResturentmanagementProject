@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import "./sendorder.css";
 import foodimage1 from "../assets/image9.jpg";
-
+import Bottom from "../component/Bottom";
 export default function SendOrder() {
   const [foods, setFoods] = useState([]);
   const [selectedFood, setSelectedFood] = useState(null);
@@ -94,13 +94,16 @@ export default function SendOrder() {
   };
 
   return (
-    <div
+
+     <div>
+      <Navbar />
+      <div
       className="sendorder-body"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${foodimage1})`,
       }}
     >
-      <Navbar />
+      
       <h1 className="sendorder-title">Place Your Order 🍕</h1>
 
       <div className="food-grid">
@@ -170,6 +173,14 @@ export default function SendOrder() {
         ))}
       </div>
     </div>
+
+    <div style={{marginTop:"-50px"}}> <Bottom/></div>
+     </div>
+
+
+
+
+    
   );
 }
 

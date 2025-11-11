@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../component/Navbar";
 import "./addproduct.css";
 import foodimage1 from "../assets/image6.jpg"; // background image
-
+import Bottom from "../component/Bottom";
 export default function AddProduct() {
   const [formData, setFormData] = useState({
     name: "",
@@ -61,7 +61,9 @@ export default function AddProduct() {
   };
 
   return (
-    <div
+
+    <div>
+      <div
       className="add-product-page"
       style={{
         backgroundImage: `url(${foodimage1})`,
@@ -131,6 +133,10 @@ export default function AddProduct() {
           {message && <p className="message">{message}</p>}
         </form>
       </div>
+     
     </div>
+     <div style={{marginTop:"-50px"}}> <Bottom/></div>
+    </div>
+    
   );
 }

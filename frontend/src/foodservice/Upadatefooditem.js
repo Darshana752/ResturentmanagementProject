@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import "./updatefooditem.css";
-
+import Bottom from "../component/Bottom";
 export default function UpdateFooditem() {
   const [foods, setFoods] = useState([]);
   const [editId, setEditId] = useState(null);
@@ -81,7 +81,7 @@ export default function UpdateFooditem() {
   };
 
   return (
-    <div>
+    <div><div>
       <Navbar />
       <div className="update-page">
         <h1 className="update-title">🍽 Manage & Update Food Items</h1>
@@ -165,6 +165,7 @@ export default function UpdateFooditem() {
         </div>
       </div>
     </div>
+     <div style={{marginTop:"-50px"}}> <Bottom/></div></div>
   );
 }
 

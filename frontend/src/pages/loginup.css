@@ -79,6 +79,7 @@ body {
   align-items: center;
   animation: fadeIn 1s ease forwards;
   position: relative;
+  padding-bottom: 50px;
 }
 
 /* Optional overlay for better readability */
@@ -105,6 +106,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.8s ease forwards;
   margin-top: 130px;
+ 
 }
 
 /* Card title */

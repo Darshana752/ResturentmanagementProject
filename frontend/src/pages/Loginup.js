@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Navbar from "../component/Navbar";
 import "./loginup.css";
 import foodimage1 from "../assets/image3.jpg";
+import Bottom from "../component/Bottom";
 
 export default function Loginup() {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -93,7 +94,9 @@ export default function Loginup() {
             </form>
           </div>
         </div>
+         
       </div>
+      <div style={{marginTop:"-50px"}}> <Bottom/></div>
     </>
   );
 }

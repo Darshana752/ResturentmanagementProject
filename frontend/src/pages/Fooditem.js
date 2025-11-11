@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar";
 import "./fooditem.css";
 import foodimage1 from "../assets/image5.jpg"; // background image
+import Bottom from "../component/Bottom";
 
 export default function Fooditem() {
   const [foods, setFoods] = useState([]);
@@ -53,7 +54,9 @@ export default function Fooditem() {
             )}
           </div>
         </div>
+      
       </div>
+       <div style={{marginTop:"-50px"}}> <Bottom/></div>
     </div>
   );
 }

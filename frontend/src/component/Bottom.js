@@ -15,7 +15,7 @@ export default function Bottom() {
         {/* Middle - Social Media Links */}
         <div className="footer-social">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Darshana752/ResturentmanagementProject.git"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -36,7 +36,7 @@ export default function Bottom() {
             <FaInstagram />
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/malith-botheju-305719363/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -47,7 +47,7 @@ export default function Bottom() {
         {/* Right - Contact / Copyright */}
         <div className="footer-right">
           <p>
-            Contact us: <a href="mailto:info@foodexpress.com">info@foodexpress.com</a>
+            Contact us: <a href="malithbotheju9@gmail.com">malithbotheju9@gmail.com</a>
           </p>
           <p>© {new Date().getFullYear()} FoodExpress. All rights reserved.</p>
         </div>

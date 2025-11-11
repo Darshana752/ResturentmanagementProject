@@ -32,13 +32,13 @@ export default function Home() {
         <div className="about-container">
           <h2>About MD Restaurent </h2>
           <p>
-            At <strong>Food Heaven</strong>, we believe that good food brings people together.
+            At <strong>MD Restaurent</strong>, we believe that good food brings people together.
             Whether you’re craving something spicy, sweet, or savory — we deliver
             happiness right to your doorstep. Our platform connects passionate chefs
             and hungry customers with a smooth, fast, and reliable experience.
           </p>
           <p>
-            We’re not just a food delivery service — we’re a community that celebrates
+            We’re not just a food delivery restaurent — we’re a community that celebrates
             taste, freshness, and convenience. Enjoy restaurant-quality dishes,
             handcrafted with love, delivered hot and fresh to your home.
           </p>

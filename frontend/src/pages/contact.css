@@ -1,0 +1,184 @@
+/* 🌍 General Page Setup */
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Add dark overlay for readability */
+.contact-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(119, 119, 122, 0.85), rgba(32, 5, 139, 0.85));
+  z-index: 0;
+}
+
+.contact-page>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* 🌟 Hero Section */
+.contact-hero {
+  padding: 120px 20px 40px;
+  animation: fadeInDown 1.5s ease;
+}
+
+.contact-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s infinite alternate;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ddd;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* 💬 Contact Cards */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px 20px;
+  animation: fadeInUp 2s ease;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 280px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.5s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* 🧭 Icons and Links */
+.contact-icon {
+  font-size: 2.8rem;
+  color: #ffafbd;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.2) rotate(5deg);
+  color: #ffc3a0;
+}
+
+.contact-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #ffafbd;
+  text-decoration: underline;
+}
+
+/* 🌈 Footer */
+.contact-footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+ 
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+  animation: fadeIn 2s ease;
+  margin-bottom: -30px;
+
+}
+
+/* ✨ Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 15px #ffafbd, 0 0 25px #ffc3a0;
+  }
+
+  to {
+    text-shadow: 0 0 25px #ffafbd, 0 0 45px #ffc3a0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}

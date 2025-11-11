@@ -3,6 +3,7 @@ import Navbar from "../component/Navbar";
 import "./customerdashboard.css";
 import { useNavigate } from "react-router-dom";
 import foodimage1 from "../assets/image8.jpg";
+import Bottom from "../component/Bottom";
 
 export default function Customerdashboard() {
   const navigate = useNavigate();
@@ -16,7 +17,8 @@ export default function Customerdashboard() {
   };
 
   return (
-    <div
+
+    <div><div
       className="dashboard-body"
       style={{ backgroundImage: `url(${foodimage1})` }}
     >
@@ -51,6 +53,10 @@ export default function Customerdashboard() {
           </div>
         </div>
       </div>
+      
     </div>
+    <div style={{marginTop:"-50px"}}> <Bottom/></div>
+    </div>
+    
   );
 }

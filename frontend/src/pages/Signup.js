@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../component/Navbar";
 import "./signup.css"; // ✅ Import the CSS file
 import foodimage1 from "../assets/image2.jpg";
+import Bottom from "../component/Bottom";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -186,6 +187,7 @@ export default function Signup() {
           </button>
         </form>
       </div>
+       <div style={{marginTop:"-20px"}}> <Bottom/></div>
     </div>
   );
 }

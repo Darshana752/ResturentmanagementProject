@@ -1,12 +1,9 @@
 version: '3.8'
 
 services:
-  # Backend (Spring Boot)
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: restaurant_backend1
+    image: darshana9/restaurant-backend:latest  # Change this
+    container_name: restaurant_backend
     restart: always
     ports:
       - "8090:8090"
@@ -19,12 +16,9 @@ services:
     networks:
       - restaurant_network
 
-  # Frontend (React + Nginx)
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: restaurant_frontend1
+    image: darshana9/restaurant-frontend:latest  # Change this
+    container_name: restaurant_frontend
     restart: always
     ports:
       - "3000:80"
